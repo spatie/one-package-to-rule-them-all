@@ -1,7 +1,3 @@
 # Changelog
 
-All notable changes to `one-package-to-rule-them-all` will be documented in this file.
-
-## 1.0.0 - 202X-XX-XX
-
-- initial release
+All notable changes to `one-package-to-rule-them-all` will be thrown in mount Doom.

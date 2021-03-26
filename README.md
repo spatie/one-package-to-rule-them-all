@@ -1,12 +1,13 @@
-# Why require one if you can require them all?
+# 💍 Why require one if you can require them all?
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/one-package-to-rule-them-all.svg?style=flat-square)](https://packagist.org/packages/spatie/one-package-to-rule-them-all)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/one-package-to-rule-them-all/run-tests?label=tests)](https://github.com/spatie/one-package-to-rule-them-all/actions?query=workflow%3ATests+branch%3Amaster)
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/one-package-to-rule-them-all/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/one-package-to-rule-them-all/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/one-package-to-rule-them-all.svg?style=flat-square)](https://packagist.org/packages/spatie/one-package-to-rule-them-all)
 
+From the team that brought you [laravel-random-command](https://github.com/spatie/laravel-random-command) comes another gem!
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+Requiring all our package separately takes a lot of effort. This package solves that problem! By pulling in this one, you get all the Spatie magic in one go 
 
 ## Support us
 
@@ -24,31 +25,16 @@ You can install the package via composer:
 composer require spatie/one-package-to-rule-them-all
 ```
 
-You can publish and run the migrations with:
+You can publish and run all the migrations with:
 
 ```bash
 php artisan vendor:publish --provider="spatie\PackageCollection\PackageCollectionServiceProvider" --tag="one-package-to-rule-them-all-migrations"
 php artisan migrate
 ```
 
-You can publish the config file with:
-```bash
-php artisan vendor:publish --provider="spatie\PackageCollection\PackageCollectionServiceProvider" --tag="one-package-to-rule-them-all-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
 ## Usage
 
-```php
-$one-package-to-rule-them-all = new spatie\PackageCollection();
-echo $one-package-to-rule-them-all->echoPhrase('Hello, spatie!');
-```
+Anything goes!
 
 ## Testing
 

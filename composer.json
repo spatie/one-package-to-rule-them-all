@@ -2,8 +2,11 @@
     "name": "spatie/one-package-to-rule-them-all",
     "description": "Why require one if you can require them all?",
     "keywords": [
-        "spatie",
-        "one-package-to-rule-them-all"
+        "one",
+        "to",
+        "rule",
+        "them",
+        "all"
     ],
     "homepage": "https://github.com/spatie/one-package-to-rule-them-all",
     "license": "MIT",

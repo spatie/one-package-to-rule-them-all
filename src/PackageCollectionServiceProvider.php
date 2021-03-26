@@ -4,7 +4,7 @@ namespace spatie\PackageCollection;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use spatie\PackageCollection\Commands\PackageCollectionCommand;
+use Spatie\PackageCollection\Commands\PackageCollectionCommand;
 
 class PackageCollectionServiceProvider extends PackageServiceProvider
 {

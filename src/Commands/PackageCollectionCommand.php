@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Skeleton\Commands;
+namespace spatie\PackageCollection\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class PackageCollectionCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'one-package-to-rule-them-all';
 
     public $description = 'My command';
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace spatie\PackageCollection\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Spatie\Skeleton\SkeletonServiceProvider;
+use spatie\PackageCollection\PackageCollectionServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Spatie\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'spatie\\PackageCollection\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            PackageCollectionServiceProvider::class,
         ];
     }
 
@@ -34,7 +34,7 @@ class TestCase extends Orchestra
         ]);
 
         /*
-        include_once __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
+        include_once __DIR__.'/../database/migrations/create_one_package_to_rule_them_all_table.php.stub';
         (new \CreatePackageTable())->up();
         */
     }

@@ -4,7 +4,6 @@ namespace spatie\OnePackageToRuleThemAll\Commands;
 
 use Exception;
 use Illuminate\Console\Command;
-use Illuminate\Support\Collection;
 
 class PackageInspireCommand extends Command
 {

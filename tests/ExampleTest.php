@@ -2,8 +2,6 @@
 
 namespace spatie\OnePackageToRuleThemAll\Tests;
 
-use Illuminate\Support\Facades\Artisan;
-
 class ExampleTest extends TestCase
 {
     /** @test */

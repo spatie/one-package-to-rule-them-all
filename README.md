@@ -52,7 +52,7 @@ return [
 
 Anything goes!
 ```bash
-a package:inspire
+php artisan package:inspire
 ```
 
 ## Testing

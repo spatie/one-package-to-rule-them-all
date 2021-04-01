@@ -59,7 +59,6 @@
         "spatie/laravel-dashboard": "^2.0",
         "spatie/laravel-dashboard-belgian-trains-tile": "^2.0",
         "spatie/laravel-dashboard-calendar-tile": "^2.0",
-        "spatie/laravel-dashboard-oh-dear-uptime-tile": "^2.0",
         "spatie/laravel-dashboard-time-weather-tile": "^2.0",
         "spatie/laravel-dashboard-twitter-tile": "^2.0",
         "spatie/laravel-dashboard-velo-tile": "^2.0",
@@ -166,7 +165,8 @@
         "spatie/url-signer": "^1.2",
         "spatie/valuestore": "^1.2",
         "spatie/workshop-unit-conversions": "^1.1",
-        "spatie/yaml-front-matter": "^2.0"
+        "spatie/yaml-front-matter": "^2.0",
+        "spatie/phpunit-snapshot-assertions": "^4.2"
     },
     "suggest" : {
         "spatie/pdf-to-image" :  "Composer said no to spatie/pdf-to-image",
@@ -206,17 +206,18 @@
         "spatie/laravel-paginateroute" :  "Composer said no to spatie/laravel-paginateroute",
         "spatie/laravel-partialcache": "Composer said no to spatie/laravel-partialcache",
         "spatie/laravel4-googletagmanager" :  "Composer said no to spatie/laravel4-googletagmanager",
-        "spatie/7to5": "Composer said no to spatie/7to5"
+        "spatie/7to5": "Composer said no to spatie/7to5",
+        "spatie/laravel-dashboard-oh-dear-uptime-tile": "Composer said no to spatie/laravel-dashboard-oh-dear-uptime-tile"
     },
     "autoload": {
         "psr-4": {
-            "spatie\\PackageCollection\\": "src",
-            "spatie\\PackageCollection\\Database\\Factories\\": "database/factories"
+            "spatie\\OnePackageToRuleThemAll\\": "src",
+            "spatie\\OnePackageToRuleThemAll\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "spatie\\PackageCollection\\Tests\\": "tests"
+            "spatie\\OnePackageToRuleThemAll\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -230,16 +231,17 @@
     "extra": {
         "laravel": {
             "providers": [
-                "spatie\\PackageCollection\\PackageCollectionServiceProvider"
+                "spatie\\OnePackageToRuleThemAll\\OnePackageToRuleThemAllServiceProvider"
             ],
             "aliases": {
-                "PackageCollection": "spatie\\PackageCollection\\PackageCollectionFacade"
+                "OnePackageToRuleThemAll": "spatie\\OnePackageToRuleThemAll\\OnePackageToRuleThemAllFacade"
             }
         }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "spatie/phpunit-snapshot-assertions": "^4.2"
+        "orchestra/testbench": "^6.16",
+        "vimeo/psalm": "^4.4"
     }
 }

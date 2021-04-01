@@ -1,2 +1,2 @@
 providers:
-  - spatie\PackageCollection\PackageCollectionServiceProvider
+  - spatie\OnePackageToRuleThemAll\OnePackageToRuleThemAllServiceProvider

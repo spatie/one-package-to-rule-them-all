@@ -1,12 +1,14 @@
 <?php
 
-namespace spatie\PackageCollection\Tests;
+namespace spatie\OnePackageToRuleThemAll\Tests;
+
+use Illuminate\Support\Facades\Artisan;
 
 class ExampleTest extends TestCase
 {
     /** @test */
-    public function true_is_true()
+    public function it_can_inspire_you_to_build_a_package()
     {
-        $this->assertTrue(true);
+        $this->artisan('package:inspire')->assertExitCode(0);
     }
 }

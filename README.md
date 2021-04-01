@@ -7,7 +7,7 @@
 
 From the team that brought you [laravel-random-command](https://github.com/spatie/laravel-random-command) comes another gem!
 
-Requiring all our package separately takes a lot of effort. This package solves that problem! By pulling in this one, you get all the Spatie magic in one go.
+Requiring all our packages separately takes a lot of effort. This package solves that problem! By pulling in this one, you get all the Spatie magic in one go.
 
 ## Support us
 

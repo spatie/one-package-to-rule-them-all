@@ -1,0 +1,45 @@
+{
+    "name": "spatie/emoji",
+    "description": "Display emoji characters",
+    "keywords": [
+        "spatie",
+        "emoji"
+    ],
+    "homepage": "https://github.com/spatie/emoji",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^7.2|^8.0",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "ext-iconv": "*",
+        "ext-json": "*",
+        "phpunit/phpunit": "^9.4",
+        "symfony/console": "^4.2",
+        "twig/twig": "^2.7",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Emoji\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Emoji\\Generator\\": "generator",
+            "Spatie\\Emoji\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "generate": "php ./generate generate"
+    }
+}

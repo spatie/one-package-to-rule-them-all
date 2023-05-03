@@ -6,7 +6,7 @@ use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use spatie\OnePackageToRuleThemAll\Commands\PackageInspireCommand;
 
-class OnePackageToRuleThemAllServiceProvider extends PackageServiceProvider
+final class OnePackageToRuleThemAllServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {

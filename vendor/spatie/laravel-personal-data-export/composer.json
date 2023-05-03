@@ -1,0 +1,62 @@
+{
+    "name": "spatie/laravel-personal-data-export",
+    "description": "Create personal data downloads in a Laravel app",
+    "keywords": [
+        "spatie",
+        "personal-data-export",
+        "zip",
+        "gdpr",
+        "personal"
+    ],
+    "homepage": "https://github.com/spatie/laravel-personal-data-export",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*",
+        "ext-zip": "*",
+        "illuminate/filesystem": "^8.0",
+        "illuminate/queue": "^8.0",
+        "illuminate/support": "^8.0",
+        "nesbot/carbon": "^2.14",
+        "spatie/temporary-directory": "^1.1"
+    },
+    "require-dev": {
+        "laravel/legacy-factories": "^1.0.4",
+        "mockery/mockery": "^1.4",
+        "orchestra/testbench": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\PersonalDataExport\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\PersonalDataExport\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\PersonalDataExport\\PersonalDataExportServiceProvider"
+            ]
+        }
+    }
+}

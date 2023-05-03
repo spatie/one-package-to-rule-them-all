@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+
+<?php
+
+if (file_exists(__DIR__.'/vendor/autoload.php')) {
+    require __DIR__.'/vendor/autoload.php';
+} else {
+    require __DIR__.'/../../autoload.php';
+}
+
+prepareArgs();
+
+$application = new Spatie\PhpUnitWatcher\ConsoleApplication();
+
+$application->run();
+
+function prepareArgs() {
+    $arguments = $_SERVER['argv'];
+
+    if (! is_array($arguments)) {
+        return;
+    }
+
+    if (count($arguments) <= 2) {
+        return;
+    }
+
+    if ($arguments[1] !== "watch") {
+        return;
+    }
+
+    $newArguments = array_slice($arguments, 0, 2);
+
+    $newArguments[] = "'" . implode(' ', array_slice($arguments, 2)) . "'";
+
+    $_SERVER['argv'] = $newArguments;
+}

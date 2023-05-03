@@ -1,0 +1,7 @@
+/build/*
+/build.xml
+/vendor
+/composer.phar
+/composer.lock
+/tools
+/phive.phar

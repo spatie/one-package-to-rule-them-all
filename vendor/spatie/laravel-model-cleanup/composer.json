@@ -1,0 +1,54 @@
+{
+    "name": "spatie/laravel-model-cleanup",
+    "description": "This package deletes unneeded records in a database.",
+    "keywords": [
+        "spatie",
+        "laravel-model-cleanup"
+    ],
+    "homepage": "https://github.com/spatie/laravel-model-cleanup",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^7.4|^8.0",
+        "illuminate/support": "^7.28|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0",
+        "orchestra/testbench":"^5.3|^6.0",
+        "mockery/mockery": "^1.0",
+        "spatie/test-time": "^1.2",
+        "vimeo/psalm": "^4.2",
+        "pestphp/pest": "^0.3.0",
+        "pestphp/pest-plugin-laravel": "^0.3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\ModelCleanup\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/pest"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\ModelCleanup\\ModelCleanupServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

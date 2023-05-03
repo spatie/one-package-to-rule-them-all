@@ -1,0 +1,24 @@
+{
+    "name": "hanneskod/classtools",
+    "description": "Find, extract and process classes from file system",
+    "keywords": ["class finder", "metaprogramming", "code generator", "minimizer"],
+    "homepage": "https://github.com/hanneskod/classtools",
+    "type": "library",
+    "license": "WTFPL",
+    "authors": [
+        {
+            "name": "Hannes Forsgård",
+            "email": "hannes.forsgard@fripost.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "hanneskod\\classtools\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "nikic/php-parser": "^4",
+        "symfony/finder": "^4|^5"
+    }
+}

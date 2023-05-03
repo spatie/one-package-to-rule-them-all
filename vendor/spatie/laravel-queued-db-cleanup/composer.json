@@ -1,0 +1,59 @@
+{
+    "name": "spatie/laravel-queued-db-cleanup",
+    "description": "Safely delete large numbers of records",
+    "keywords": [
+        "spatie",
+        "laravel-queued-db-cleanup",
+        "delete",
+        "eloquent",
+        "vapor"
+    ],
+    "homepage": "https://github.com/spatie/laravel-queued-db-cleanup",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "doctrine/dbal": "~2.12|^3.0",
+        "illuminate/contracts": "^8.0|^9.0|^10.0",
+        "laravel/serializable-closure": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.23|^7.0|^8.0",
+        "phpunit/phpunit": "^9.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\LaravelQueuedDbCleanup\\": "src",
+            "Spatie\\LaravelQueuedDbCleanup\\Tests\\Database\\Factories\\": "tests/database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\LaravelQueuedDbCleanup\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors=always",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\LaravelQueuedDbCleanup\\LaravelQueuedDbCleanupServiceProvider"
+            ]
+        }
+    }
+}

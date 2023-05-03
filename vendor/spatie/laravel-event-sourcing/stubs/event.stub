@@ -1,0 +1,12 @@
+<?php
+
+namespace DummyNamespace;
+
+use Spatie\EventSourcing\StoredEvents\ShouldBeStored;
+
+class DummyClass extends ShouldBeStored
+{
+    public function __construct()
+    {
+    }
+}

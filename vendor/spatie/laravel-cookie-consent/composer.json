@@ -1,0 +1,67 @@
+{
+    "name": "spatie/cookie-consent",
+    "description": "Make your Laravel app comply with the crazy EU cookie law",
+    "keywords": [
+        "spatie",
+        "cookie-consent",
+        "cookie",
+        "comply",
+        "law",
+        "eu"
+    ],
+    "homepage": "https://github.com/spatie/cookie-consent",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        },
+        {
+            "name": "Willem Van Bockstal",
+            "email": "willem@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0|^9.0|^10.0",
+        "illuminate/view": "^8.0|^9.0|^10.0",
+        "illuminate/cookie": "^8.0|^9.0|^10.0",
+        "spatie/laravel-package-tools": "^1.9"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.9",
+        "orchestra/testbench": "^6.0|^7.0|^8.0",
+        "pestphp/pest": "^1.22"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\CookieConsent\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\CookieConsent\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\CookieConsent\\CookieConsentServiceProvider"
+            ]
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

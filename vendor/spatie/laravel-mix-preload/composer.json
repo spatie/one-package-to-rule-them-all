@@ -1,0 +1,49 @@
+{
+    "name": "spatie/laravel-mix-preload",
+    "description": "Add preload and prefetch links based your Mix manifest",
+    "keywords": [
+        "spatie",
+        "laravel-mix-preload"
+    ],
+    "homepage": "https://github.com/spatie/laravel-mix-preload",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian De Deyne",
+            "email": "sebastian@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\MixPreload\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\MixPreload\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\MixPreload\\MixPreloadServiceProvider"
+            ]
+        }
+    }
+}

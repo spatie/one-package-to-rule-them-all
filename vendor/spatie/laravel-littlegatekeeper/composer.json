@@ -1,0 +1,43 @@
+{
+    "name": "spatie/laravel-littlegatekeeper",
+    "description": "Protect pages from access with a universal username/password",
+    "keywords": [
+        "spatie",
+        "laravel-littlegatekeeper"
+    ],
+    "homepage": "https://github.com/spatie/laravel-littlegatekeeper",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian De Deyne",
+            "email": "sebastian@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=5.3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\LittleGateKeeper\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Spatie\\LittleGateKeeper\\LittleGateKeeperServiceProvider"
+            ]
+        }
+    }
+}

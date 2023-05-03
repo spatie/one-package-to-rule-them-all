@@ -2,7 +2,7 @@
 
 namespace spatie\OnePackageToRuleThemAll\Tests;
 
-class ExampleTest extends TestCase
+final class ExampleTest extends TestCase
 {
     /** @test */
     public function it_can_inspire_you_to_build_a_package()

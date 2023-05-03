@@ -1,0 +1,73 @@
+{
+    "name": "orchestra/testbench-core",
+    "description": "Testing Helper for Laravel Development",
+    "homepage": "https://packages.tools/testbench",
+    "keywords": ["laravel", "laravel-packages", "testing", "tdd", "bdd", "dev"],
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/orchestral/testbench/issues",
+        "source": "https://github.com/orchestral/testbench-core"
+    },
+    "authors": [
+        {
+            "name": "Mior Muhammad Zaki",
+            "email": "crynobone@gmail.com",
+            "homepage": "https://github.com/crynobone"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Orchestra\\Testbench\\" : "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Orchestra\\Testbench\\Tests\\": "tests/"
+        }
+    },
+    "bin": [
+        "testbench"
+    ],
+    "require": {
+        "php": "^7.3 || ^8.0",
+        "fakerphp/faker": "^1.9.1",
+        "symfony/yaml": "^5.0",
+        "vlucas/phpdotenv": "^5.1"
+    },
+    "require-dev": {
+        "laravel/framework": "^8.83.27",
+        "laravel/laravel": "8.x-dev",
+        "mockery/mockery": "^1.4.4",
+        "orchestra/canvas": "^6.1",
+        "phpunit/phpunit": "^8.5.21 || ^9.5.10",
+        "spatie/laravel-ray": "^1.7.1",
+        "symfony/process": "^5.0"
+    },
+    "suggest": {
+        "laravel/framework": "Required for testing (^8.83.26).",
+        "mockery/mockery": "Allow using Mockery for testing (^1.4.4).",
+        "orchestra/testbench-browser-kit": "Allow using legacy Laravel BrowserKit for testing (^6.0).",
+        "orchestra/testbench-dusk": "Allow using Laravel Dusk for testing (^6.0).",
+        "phpunit/phpunit": "Allow using PHPUnit for testing (^8.5.21|^9.5.10|^10.0)."
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "6.0-dev"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@composer run prepare",
+        "prepare": "@php testbench package:discover --ansi",
+        "test": [
+            "@composer run prepare",
+            "@php vendor/bin/phpunit -c ./ --color"
+        ]
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev"
+}

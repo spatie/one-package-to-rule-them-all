@@ -1,0 +1,48 @@
+{
+    "name": "spatie/period",
+    "description": "Complex period comparisons",
+    "keywords": [
+        "spatie",
+        "period"
+    ],
+    "homepage": "https://github.com/spatie/period",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brent Roose",
+            "email": "brent@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.1",
+        "nesbot/carbon": "^2.63",
+        "pestphp/pest": "^1.22",
+        "phpunit/phpunit": "^9.5",
+        "spatie/ray": "^1.31"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Period\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Period\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

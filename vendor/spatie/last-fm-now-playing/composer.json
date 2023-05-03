@@ -1,0 +1,38 @@
+{
+    "name": "spatie/last-fm-now-playing",
+    "description": "Get track info that a user is currently playing",
+    "keywords": [
+        "spatie",
+        "last-fm-now-playing"
+    ],
+    "homepage": "https://github.com/spatie/last-fm-now-playing",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^5.5|^7.0|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8.36",
+        "mockery/mockery": ">=0.9.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\NowPlaying\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\NowPlaying\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}

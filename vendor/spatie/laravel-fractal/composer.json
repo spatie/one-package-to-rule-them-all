@@ -1,0 +1,65 @@
+{
+    "name": "spatie/laravel-fractal",
+    "description": "An easy to use Fractal integration for Laravel applications",
+    "keywords": [
+        "spatie",
+        "laravel-fractal",
+        "laravel",
+        "fractal",
+        "lumen",
+        "api",
+        "transform"
+    ],
+    "homepage": "https://github.com/spatie/laravel-fractal",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^7.2|^8.0",
+        "illuminate/contracts": "^7.0|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "spatie/fractalistic": "^2.5"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0|^6.0",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Fractal\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Fractal\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\Fractal\\FractalServiceProvider"
+            ],
+            "aliases": {
+                "Fractal": "Spatie\\Fractal\\FractalFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

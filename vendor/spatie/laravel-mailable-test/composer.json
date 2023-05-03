@@ -1,0 +1,53 @@
+{
+    "name": "spatie/laravel-mailable-test",
+    "description": "An artisan command to easily test a mailable",
+    "keywords": [
+        "spatie",
+        "laravel-mailable-test"
+    ],
+    "homepage": "https://github.com/spatie/laravel-mailable-test",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.3|^8.0",
+        "fakerphp/faker": "^1.16|^1.9.1",
+        "illuminate/contracts": "^7.0|^8.73|^9.0|^10.0",
+        "illuminate/database": "^7.0|^8.73|^9.0|^10.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0|^1.4",
+        "orchestra/testbench": "^5.0|^6.23|^7.0|^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\MailableTest\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\MailableTest\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\MailableTest\\MailableTestServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "name": "spatie/interactive-slack-notification-channel",
+    "description": "Send interactive Slack notifications in Laravel apps",
+    "keywords": [
+        "spatie",
+        "interactive-slack-notification-channel"
+    ],
+    "homepage": "https://github.com/spatie/interactive-slack-notification-channel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "illuminate/contracts": "^8.0|^9.0|^10.0",
+        "illuminate/http": "^8.0|^9.0|^10.0",
+        "illuminate/support": "^8.0|^9.0|^10.0"
+    },
+    "require-dev": {
+        "ext-json": "*",
+        "mockery/mockery": "^1.4",
+        "orchestra/testbench": "^6.0|^7.0|^8.0",
+        "phpunit/phpunit": "^9.5",
+        "spatie/ray": "^1.27",
+        "spatie/test-time": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\InteractiveSlackNotificationChannel\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\InteractiveSlackNotificationChannel\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --colors=always",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\InteractiveSlackNotificationChannel\\InteractiveSlackNotificationChannelServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

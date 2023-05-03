@@ -1,0 +1,57 @@
+{
+    "name": "spatie/laravel-server-monitor",
+    "description": "Monitor servers",
+    "keywords": [
+        "spatie",
+        "laravel-server-monitor"
+    ],
+    "homepage": "https://github.com/spatie/laravel-server-monitor",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "php": "^7.3|^8.0",
+        "guzzlehttp/guzzle": "^6.3|^7.0",
+        "laravel/framework": "^6.0|^7.0|^8.0|^9.0",
+        "spatie/laravel-blink": "^1.3",
+        "spatie/regex": "^1.1",
+        "symfony/process": "^4.0|^5.0|^6.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.4",
+        "orchestra/testbench": "^4.0|^5.0|^6.0|^7.0",
+        "phpunit/phpunit": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\ServerMonitor\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\ServerMonitor\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\ServerMonitor\\ServerMonitorServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

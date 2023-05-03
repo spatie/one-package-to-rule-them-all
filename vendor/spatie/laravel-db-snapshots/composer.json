@@ -1,0 +1,55 @@
+{
+    "name": "spatie/laravel-db-snapshots",
+    "description": "Quickly dump and load databases",
+    "keywords": [
+        "spatie",
+        "laravel-db-snapshots"
+    ],
+    "homepage": "https://github.com/spatie/laravel-db-snapshots",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0",
+        "league/flysystem": "^1.0.41",
+        "spatie/db-dumper": "^2.11",
+        "spatie/temporary-directory": "^1.1"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.4",
+        "orchestra/testbench": "^4.0|^5.0|^6.0",
+        "phpunit/phpunit": "^9.1|^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\DbSnapshots\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\DbSnapshots\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\DbSnapshots\\DbSnapshotsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

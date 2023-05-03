@@ -1,0 +1,50 @@
+{
+    "name": "spatie/laravel-newsletter",
+    "description": "Manage newsletters in Laravel",
+    "keywords": [
+        "laravel",
+        "newsletter",
+        "mailchimp"
+    ],
+    "homepage": "https://github.com/spatie/laravel-newsletter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^8.0|^9.0",
+        "drewm/mailchimp-api": "^2.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Newsletter\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Newsletter\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\Newsletter\\NewsletterServiceProvider"
+            ],
+            "aliases": {
+                "Newsletter": "Spatie\\Newsletter\\NewsletterFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

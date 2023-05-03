@@ -1,0 +1,60 @@
+{
+    "name": "spatie/laravel-welcome-notification",
+    "description": "Send a welcome notification to new users",
+    "keywords": [
+        "spatie",
+        "laravel-welcome-mail"
+    ],
+    "homepage": "https://github.com/spatie/laravel-welcome-notification",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/auth": "^7.0|^8.0|^9.0|^10.0",
+        "illuminate/notifications": "^7.0|^8.0|^9.0|^10.0",
+        "illuminate/queue": "^7.0|^8.0|^9.0|^10.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0|^6.0|^7.0|^8.0",
+        "pestphp/pest": "^1.22",
+        "pestphp/pest-plugin-laravel": "^1.3",
+        "phpunit/phpunit": "^9.0",
+        "spatie/test-time": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\WelcomeNotification\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\WelcomeNotification\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\WelcomeNotification\\WelcomeNotificationServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

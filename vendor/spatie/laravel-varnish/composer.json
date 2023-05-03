@@ -1,0 +1,56 @@
+{
+    "name": "spatie/laravel-varnish",
+    "description": "Making Varnish and Laravel play nice together",
+    "keywords": [
+        "spatie",
+        "laravel-varnish"
+    ],
+    "homepage": "https://github.com/spatie/laravel-varnish",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/console": "^8.73|^9.0|^10.0",
+        "illuminate/http": "^8.73|^9.0|^10.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.23|^7.0|^8.0",
+        "pestphp/pest": "^1.22",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Varnish\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Varnish\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\Varnish\\VarnishServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

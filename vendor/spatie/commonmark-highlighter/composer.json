@@ -1,0 +1,46 @@
+{
+    "name": "spatie/commonmark-highlighter",
+    "description": "Highlight your markdown code blocks with league/commonmark",
+    "keywords": [
+        "spatie",
+        "commonmark-highlighter"
+    ],
+    "homepage": "https://github.com/spatie/commonmark-highlighter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian De Deyne",
+            "email": "sebastian@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2|^8.0",
+        "league/commonmark": "^1.5",
+        "scrivo/highlight.php": "^9.18.1.4"
+    },
+    "require-dev": {
+        "larapack/dd": "^1.0",
+        "phpunit/phpunit": "^8.5|^9.4",
+        "spatie/phpunit-snapshot-assertions": "^2.0|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\CommonMarkHighlighter\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\CommonMarkHighlighter\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

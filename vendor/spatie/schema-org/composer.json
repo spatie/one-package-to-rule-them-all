@@ -1,0 +1,59 @@
+{
+    "name": "spatie/schema-org",
+    "description": "A fluent builder Schema.org types and ld+json generator",
+    "license": "MIT",
+    "keywords": [
+        "spatie",
+        "schema-org"
+    ],
+    "authors": [
+        {
+            "name": "Sebastian De Deyne",
+            "email": "sebastian@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        },
+        {
+            "name": "Tom Witkowski",
+            "email": "dev.gummibeer@gmail.com",
+            "homepage": "https://gummibeer.de",
+            "role": "Developer"
+        }
+    ],
+    "homepage": "https://github.com/spatie/schema-org",
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.6",
+        "graham-campbell/analyzer": "^3.0.5",
+        "illuminate/collections": "^8.62.0",
+        "league/flysystem": "^2.3.0 || ^3.0",
+        "pestphp/pest": "^1.21",
+        "symfony/console": "^5.3.7 || 6.0",
+        "twig/twig": "^3.3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\SchemaOrg\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\SchemaOrg\\Generator\\": "generator",
+            "Spatie\\SchemaOrg\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "fix": "@php vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php --allow-risky=yes",
+        "generate": "@php ./generate.php",
+        "test": "@php vendor/bin/pest"
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "name": "spatie/menu",
+    "description": "Html menu generator",
+    "keywords": [
+        "spatie",
+        "navigation",
+        "menu"
+    ],
+    "homepage": "https://github.com/spatie/menu",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian De Deyne",
+            "email": "sebastian@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^8.0",
+        "spatie/url": "^1.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0",
+        "vimeo/psalm": "^4.0",
+        "larapack/dd": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Menu\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "files": [
+            "tests/callables.php"
+        ],
+        "psr-4": {
+            "Spatie\\Menu\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/phpunit"
+    },
+    "funding": [
+        {
+            "type": "github",
+            "url": "https://github.com/sponsors/spatie"
+        },
+        {
+            "type": "other",
+            "url": "https://spatie.be/open-source/support-us"
+        }
+    ]
+}

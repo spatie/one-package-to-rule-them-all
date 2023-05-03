@@ -1,0 +1,60 @@
+{
+    "name": "spatie/laravel-tags",
+    "description": "Add tags and taggable behaviour to your Laravel app",
+    "keywords": [
+        "spatie",
+        "laravel-tags"
+    ],
+    "homepage": "https://github.com/spatie/laravel-tags",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "laravel/framework": "^8.67|^9.0|^10.0",
+        "nesbot/carbon": "^2.63",
+        "spatie/eloquent-sortable": "^3.10|^4.0",
+        "spatie/laravel-package-tools": "^1.4",
+        "spatie/laravel-translatable": "^4.6|^5.0|^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.13|^7.0|^8.0",
+        "pestphp/pest": "^1.22",
+        "phpunit/phpunit": "^9.5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Tags\\": "src"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Tags\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\Tags\\TagsServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

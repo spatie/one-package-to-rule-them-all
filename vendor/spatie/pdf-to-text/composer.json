@@ -1,0 +1,38 @@
+{
+    "name": "spatie/pdf-to-text",
+    "description": "Extract text from a pdf",
+    "keywords": [
+        "spatie",
+        "pdf-to-text"
+    ],
+    "homepage": "https://github.com/spatie/pdf-to-text",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^7.4|^8.0",
+        "symfony/process": "^4.0|^5.0|^6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\PdfToText\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\PdfToText\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

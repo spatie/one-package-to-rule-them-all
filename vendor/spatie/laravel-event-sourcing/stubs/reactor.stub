@@ -1,0 +1,13 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Spatie\EventSourcing\EventHandlers\Reactors\Reactor;
+
+class DummyClass extends Reactor implements ShouldQueue
+{
+    public function onEventHappened(EventHappened $event)
+    {
+    }
+}

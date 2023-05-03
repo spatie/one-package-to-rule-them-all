@@ -1,0 +1,68 @@
+{
+    "name": "spatie/laravel-feed",
+    "description": "Generate rss feeds",
+    "keywords": [
+        "spatie",
+        "rss",
+        "laravel",
+        "laravel-feed"
+    ],
+    "homepage": "https://github.com/spatie/laravel-feed",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jolita Grazyte",
+            "email": "jolita@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        },
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        },
+        {
+            "name": "Sebastian De Deyne",
+            "email": "sebastian@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : "^7.4|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "illuminate/http": "^7.0|^8.0",
+        "illuminate/contracts": "^7.0|^8.0",
+        "spatie/laravel-package-tools": "^1.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.3",
+        "orchestra/testbench": "^5.0|^6.0",
+        "spatie/phpunit-snapshot-assertions": "^4.2",
+        "spatie/test-time": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Feed\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Feed\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\Feed\\FeedServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

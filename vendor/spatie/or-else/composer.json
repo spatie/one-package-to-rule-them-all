@@ -1,0 +1,38 @@
+{
+    "name": "spatie/or-else",
+    "description": "A trait to add orElse functions to a class",
+    "keywords": [
+        "league",
+        "or-else"
+    ],
+    "homepage": "https://github.com/spatie/or-else",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": ":Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php" : ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "4.*",
+        "scrutinizer/ocular": "~1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\OrElse\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\OrElse\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "name": "spatie/laravel-query-builder",
+    "description": "Easily build Eloquent queries from API requests",
+    "keywords": [
+        "spatie",
+        "laravel-query-builder"
+    ],
+    "homepage": "https://github.com/spatie/laravel-query-builder",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/spatie/laravel-query-builder/issues",
+        "source": "https://github.com/spatie/laravel-query-builder"
+    },
+    "authors": [
+        {
+            "name": "Alex Vanderbist",
+            "email": "alex@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/database": "^6.20.13|^7.30.4|^8.22.2",
+        "illuminate/http": "^6.20.13|^7.30.4|^8.22.2",
+        "illuminate/support": "^6.20.13|^7.30.4|^8.22.2"
+    },
+    "require-dev": {
+        "ext-json": "*",
+        "laravel/legacy-factories": "^1.0.4",
+        "orchestra/testbench": "^4.9|^5.8|^6.3",
+        "phpunit/phpunit": "^9.0",
+        "mockery/mockery": "^1.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\QueryBuilder\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\QueryBuilder\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\QueryBuilder\\QueryBuilderServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

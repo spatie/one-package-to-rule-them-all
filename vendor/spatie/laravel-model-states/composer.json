@@ -1,0 +1,62 @@
+{
+    "name": "spatie/laravel-model-states",
+    "description": "State support for Eloquent models",
+    "keywords": [
+        "spatie",
+        "state"
+    ],
+    "homepage": "https://github.com/spatie/laravel-model-states",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Brent Roose",
+            "email": "brent@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "facade/ignition-contracts": "^1.0",
+        "illuminate/contracts": "^8.73 | ^9.0 | ^10.0",
+        "illuminate/database": "^8.73 | ^9.0 | ^10.0",
+        "illuminate/support": "^8.73 | ^9.0 | ^10.0",
+        "spatie/laravel-package-tools": "^1.9"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.23 | ^7.0 | ^8.0",
+        "pestphp/pest": "^1.22",
+        "phpunit/phpunit": "^9.4",
+        "symfony/var-dumper": "^5.3 | ^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\ModelStates\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\ModelStates\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\ModelStates\\ModelStatesServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

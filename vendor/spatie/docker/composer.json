@@ -1,0 +1,56 @@
+{
+    "name": "spatie/docker",
+    "description": "Run a docker container in your PHPUnit tests",
+    "keywords": [
+        "spatie",
+        "docker"
+    ],
+    "homepage": "https://github.com/spatie/docker",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ruben Van Assche",
+            "email": "ruben@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        },
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "spatie/macroable": "^1.0|^2.0",
+        "symfony/process": "^5.3|^6.0"
+    },
+    "require-dev": {
+        "pestphp/pest": "^1.22",
+        "phpunit/phpunit": "^9.4",
+        "spatie/ssh": "^1.7.0",
+        "symfony/var-dumper": "^5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Docker\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Docker\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "chmod -R 700 tests/keys && vendor/bin/pest",
+        "build-docker": "docker build -t spatie/docker ./tests/docker",
+        "test-coverage": "vendor/bin/pest --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

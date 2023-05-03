@@ -1,0 +1,12 @@
+<?php
+
+namespace DummyNamespace;
+
+use Spatie\EventSourcing\EventHandlers\Projectors\Projector;
+
+class DummyClass extends Projector
+{
+    public function onEventHappened(EventHappened $event)
+    {
+    }
+}

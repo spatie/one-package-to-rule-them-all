@@ -1,0 +1,53 @@
+{
+    "name": "spatie/laravel-searchable",
+    "description": "Pragmatically search through models and other sources",
+    "keywords": [
+        "spatie",
+        "laravel-searchable"
+    ],
+    "homepage": "https://github.com/spatie/laravel-searchable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex Vanderbist",
+            "email": "alex@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        },
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/framework": "^8.78|^9.0|^10.0",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.27|^7.0|^8.0",
+        "larapack/dd": "^1.0",
+        "phpunit/phpunit": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Searchable\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Searchable\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

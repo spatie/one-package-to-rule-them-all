@@ -1,0 +1,42 @@
+{
+    "name": "spatie/url-signer",
+    "description": "Generate a url with an expiration date and signature to prevent unauthorized access",
+    "keywords": [
+        "spatie",
+        "security",
+        "encryption",
+        "sign",
+        "url"
+    ],
+    "homepage": "https://github.com/spatie/url-signer",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian De Deyne",
+            "email": "sebastian@spatie.be",
+            "homepage": "https://github.com/sebastiandedeyne",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "league/uri": "^6.0",
+        "league/uri-components": "^2.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\UrlSigner\\": "src"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

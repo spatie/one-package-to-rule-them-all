@@ -1,0 +1,62 @@
+{
+    "name": "spatie/laravel-validation-rules",
+    "description": "A set of useful Laravel validation rules",
+    "keywords": [
+        "spatie",
+        "laravel-validation-rules"
+    ],
+    "homepage": "https://github.com/spatie/laravel-validation-rules",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://spatie.be",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^8.0|^9.0|^10.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.3",
+        "league/iso3166": "^3.0",
+        "myclabs/php-enum": "^1.6",
+        "orchestra/testbench": "^6.23|^7.0|^8.0",
+        "phpunit/phpunit": "^9.4",
+        "spatie/enum": "^2.2|^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\ValidationRules\\": "src",
+            "Spatie\\ValidationRules\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\ValidationRules\\Tests\\": "tests"
+        }
+    },
+    "suggest": {
+        "league/iso3166": "Needed for the CountryCode rule and Currency rule"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "./vendor/bin/pint",
+        "inspect": "./vendor/bin/pint --test"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Spatie\\ValidationRules\\ValidationRulesServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

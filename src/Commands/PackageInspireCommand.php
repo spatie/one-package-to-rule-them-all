@@ -5,7 +5,7 @@ namespace spatie\OnePackageToRuleThemAll\Commands;
 use Exception;
 use Illuminate\Console\Command;
 
-class PackageInspireCommand extends Command
+final class PackageInspireCommand extends Command
 {
     public $signature = 'package:inspire';
 

@@ -1,0 +1,54 @@
+{
+    "name": "spatie/browsershot",
+    "description": "Convert a webpage to an image or pdf using headless Chrome",
+    "homepage": "https://github.com/spatie/browsershot",
+    "keywords": [
+        "convert",
+        "webpage",
+        "image",
+        "pdf",
+        "screenshot",
+        "chrome",
+        "headless",
+        "puppeteer"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Freek Van der Herten",
+            "email": "freek@spatie.be",
+            "homepage": "https://github.com/freekmurze",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "spatie/image": "^1.5.3|^2.0",
+        "spatie/temporary-directory": "^1.1|^2.0",
+        "symfony/process": "^4.2|^5.0|^6.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "spatie/phpunit-snapshot-assertions": "^4.2.3",
+        "pestphp/pest": "^1.20"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spatie\\Browsershot\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Spatie\\Browsershot\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}

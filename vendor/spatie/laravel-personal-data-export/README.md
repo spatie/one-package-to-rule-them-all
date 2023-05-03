@@ -1,0 +1,276 @@
+# Create zip files containing personal data
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/laravel-personal-data-export.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-personal-data-export)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/spatie/laravel-personal-data-export/run-tests?label=tests)
+![Check & fix styling](https://github.com/spatie/laravel-personal-data-export/workflows/Check%20&%20fix%20styling/badge.svg)
+[![Total Downloads](https://img.shields.io/packagist/dt/spatie/laravel-personal-data-export.svg?style=flat-square)](https://packagist.org/packages/spatie/laravel-personal-data-export)
+
+This package makes it easy to let a user download an export containing all the personal data. Such an export consists of a zip file containing all the user properties and related info.
+
+You can create and mail such a zip by dispatching the `CreatePersonalDataExportJob` job:
+
+```php
+// somewhere in your app
+
+use Spatie\PersonalDataExport\Jobs\CreatePersonalDataExportJob;
+
+// ...
+
+dispatch(new CreatePersonalDataExportJob(auth()->user());
+```
+
+The package will create a zip containing all the personal data. When the zip has been created, a link to it will be mailed to the user. By default, the zips are saved in a non-public location, and the user should be logged in to be able to download the zip.
+
+You can configure which data will will be exported in the `selectPersonalData` method on the `user`.
+
+```php
+// in your User model
+
+public function selectPersonalData(PersonalDataSelection $personalDataSelection) {
+    $personalDataSelection
+        ->add('user.json', ['name' => $this->name, 'email' => $this->email])
+        ->addFile(storage_path("avatars/{$this->id}.jpg")
+        ->addFile('other-user-data.xml', 's3'));
+}
+```
+
+This package also offers an artisan command to remove old zip files.
+
+## Support us
+
+[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-personal-data-export.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-personal-data-export)
+
+We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
+
+We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+
+## Installation
+
+You can install the package via composer:
+
+```bash
+composer require spatie/laravel-personal-data-export
+```
+
+You need to use this macro in your routes file. It'll register a route where users can download their personal data exports.
+
+```php
+// in your routes file
+
+Route::personalDataExports('personal-data-exports');
+```
+
+You must add a disk named `personal-data-exports` to `config/filesystems` (the name of the disk can be configured in `config/personal-data-export`). You can use any driver that you want. We recommend that your disk is not publicly accessible. If you're using the `local` driver, make sure you use a path that is not inside the public path of your app.
+
+```php
+// in config/filesystems.php
+
+// ...
+
+'disks' => [
+
+    'personal-data-exports' => [
+        'driver' => 'local',
+        'root' => storage_path('app/personal-data-exports'),
+    ],
+
+// ...
+```
+
+To automatically clean up older personal data exports, you can schedule this command in your console kernel:
+
+```php
+// app/Console/Kernel.php
+
+protected function schedule(Schedule $schedule)
+{
+   $schedule->command('personal-data-export:clean')->daily();
+}
+```
+
+Optionally, you can publish the config file with:
+
+```php
+php artisan vendor:publish --provider="Spatie\PersonalDataExport\PersonalDataExportServiceProvider" --tag="config"
+```
+
+This is the content of the config file, which will be published at `config/personal-data-export.php`:
+
+```php
+return [
+    /*
+     * The disk where the exports will be stored by default.
+     */
+    'disk' => 'personal-data-exports',
+
+    /*
+     * The amount of days the exports will be available.
+     */
+    'delete_after_days' => 5,
+
+    /*
+     * Determines whether the user should be logged in to be able
+     * to access the export.
+     */
+    'authentication_required' => true,
+
+    /*
+     * The notification which will be sent to the user when the export
+     * has been created.
+     */
+    'notification' => \Spatie\PersonalDataExport\Notifications\PersonalDataExportedNotification::class,
+
+    /*
+     * Configure the queue and connection used by `CreatePersonalDataExportJob`
+     * which will create the export.
+     */
+    'job' => [
+        'queue' => null,
+        'connection' => null,
+    ],
+];
+
+```
+
+## Usage
+
+### Selecting personal data
+
+First, you'll have to prepare your user model. You should let your model implement the `Spatie\PersonalDataExport\ExportsPersonalData` interface. This is what that interface looks like:
+
+```php
+namespace Spatie\PersonalDataExport;
+
+interface ExportsPersonalData
+{
+    public function selectPersonalData(PersonalDataSelection $personalData): void;
+
+    public function personalDataExportName(): string;
+}
+```
+
+The `selectPersonalData` is used to determine the content of the personal download. Here's an example implementation:
+
+```php
+// in your user model
+
+public function selectPersonalData(PersonalDataSelection $personalData): void {
+    $personalData
+        ->add('user.json', ['name' => $this->name, 'email' => $this->email])
+        ->addFile(storage_path("avatars/{$this->id}.jpg"))
+        ->addFile('other-user-data.xml', 's3');
+}
+```
+
+`$personalData` is used to determine the content of the zip file that the user will be able to download. You can call these methods on it:
+
+- `add`: the first parameter is the name of the file in the inside the zip file. The second parameter is the content that should go in that file. If you pass an array here, we will encode it to JSON.
+- `addFile`: the first parameter is a path to a file which will be copied to the zip. You can also add a disk name as the second parameter.
+
+The name of the export itself can be set using the `personalDataExportName` on the user. This will only affect the name of the download that will be sent as a response to the user, not the name of the zip stored on disk.
+
+```php
+// on your user
+
+public function personalDataExportName(): string {
+    $userName = Str::slug($this->name);
+
+    return "personal-data-{$userName}.zip";
+}
+```
+
+### Creating an export
+
+You can create a personal data export by executing this job somewhere in your application:
+
+```php
+// somewhere in your app
+
+use Spatie\PersonalDataExport\Jobs\CreatePersonalDataExportJob;
+
+// ...
+
+dispatch(new CreatePersonalDataExportJob(auth()->user()));
+```
+
+By default, this job is queued. It will copy all files and content you selected in the `selectPersonalData` on your user to a temporary directory. Next, that temporary directory will be zipped and copied over to the `personal-data-exports` disk. A link to this zip will be mailed to the user. 
+
+### Securing the export
+
+We recommend that the `personal-data-exports` disk is not publicly accessible. If you're using the `local` driver for this disk, make sure you use a path that is not inside the public path of your app.
+
+When the user clicks the download link in the mail that gets sent after creating the export, a request will be sent to underlying `PersonalDataExportController`. This controller will check if there is a user logged in and if the request personal data zip belongs to the user. If this is the case, that controller will stream the zip to the user.
+
+If you don't want to enforce that a user should be logged in to able to download a personal data export, you can set the `authentication_required` config value to `false`. Setting the value to `false` is less secure because anybody with a link to a zip file will be able to download it, but because the name of the zip file contains many random characters, it will be hard to guess it.
+
+### Customizing the mail
+
+You can customize the mailable itself by creating your own mailable that extends `\Spatie\PersonalDataExport\Mail\PersonalDataExportCreatedMail` and register the class name of your mailable in the `mailable` config key of `config/personal-data-export.php`.
+
+### Customizing the queue
+
+You can customize the job that creates the zip file and mails it by extending the `Spatie\PersonalDataExport\Jobs\CreatePersonalDataExportJob` and dispatching your own custom job class.
+
+```php
+use Spatie\PersonalDataExport\Jobs\CreatePersonalDataExportJob;
+
+class MyCustomJobClass extends CreatePersonalDataExportJob
+{
+    public $queue = 'my-custom-queue`
+}
+```
+
+```php
+dispatch(new MyCustomJobClass(auth()->user());
+```
+
+### Events
+
+#### PersonalDataSelected
+
+This event will be fired after the personal data has been selected. It has two public properties:
+- `$personalData`: an instance of `PersonalData`. In your listeners you can call the `add`, `addFile` methods on this object to add extra content to the zip.
+- `$user`: the user for which this personal data has been selected.
+
+#### PersonalDataExportCreated
+
+This event will be fired after the personal data zip has been created. It has two public properties:
+- `$zipFilename`: the name of the zip filename.
+- `$user`: the user for which this zip has been created.
+
+#### PersonalDataExportDownloaded
+
+This event will be fired after the export has been download. It has two public properties:
+- `$zipFilename`: the name of the zip filename.
+- `$user`: the user for which this zip has been created.
+
+You could use this event to immediately clean up the downloaded zip.
+
+## Testing
+
+You can run all tests by issuing this command:
+
+``` bash
+composer test
+```
+
+## Changelog
+
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
+## Security
+
+If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+
+## Credits
+
+- [Freek Van der Herten](https://github.com/freekmurze)
+- [All Contributors](../../contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

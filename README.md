@@ -1,8 +1,8 @@
 # 💍 Why require one if you can require them all?
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/spatie/one-package-to-rule-them-all.svg?style=flat-square)](https://packagist.org/packages/spatie/one-package-to-rule-them-all)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/spatie/one-package-to-rule-them-all/run-tests?label=tests)](https://github.com/spatie/one-package-to-rule-them-all/actions?query=workflow%3ATests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/spatie/one-package-to-rule-them-all/Check%20&%20fix%20styling?label=code%20style)](https://github.com/spatie/one-package-to-rule-them-all/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![GitHub Tests Action Status](https://github.com/spatie/one-package-to-rule-them-all/actions/workflows/run-tests.yml/badge.svg)](https://github.com/spatie/one-package-to-rule-them-all/actions?query=workflow%3ATests+branch%3Amaster)
+[![GitHub Code Style Action Status](https://github.com/spatie/one-package-to-rule-them-all/actions/workflows/php-cs-fixer.yml/badge.svg)](https://github.com/spatie/one-package-to-rule-them-all/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
 [![Total Downloads](https://img.shields.io/packagist/dt/spatie/one-package-to-rule-them-all.svg?style=flat-square)](https://packagist.org/packages/spatie/one-package-to-rule-them-all)
 
 From the team that brought you [laravel-random-command](https://github.com/spatie/laravel-random-command) comes another gem!
